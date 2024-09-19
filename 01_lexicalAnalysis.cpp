@@ -20,7 +20,10 @@ void convertToLeximes(vector<string> &leximes, string code){
 
 void printLeximes(vector<string> &leximes){
     for(int i=0; i<leximes.size(); i++){
-        cout << leximes[i] << " | ";
+        if(leximes[i] == " ")
+            continue;
+        else
+            cout << leximes[i] << " ";
     }
 }
 
@@ -29,6 +32,7 @@ int main() {
     vector<string> leximes;
     cout << "Type the code here: ";
     getline(cin, str);
+    str.push_back(' ');
     
     convertToLeximes(leximes, str);
     printLeximes(leximes);
